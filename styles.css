@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "VCROSDMono";
+    src: url("./materials/VCROSDMono.ttf");
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #750050;
+  color: white;
+  padding: 20px;
+}
+
+body {
+  border: 3px solid red;
+  outline: 3px solid white;
+  font-family: 'VCROSDMono', sans-serif;
+  background-color: #696cc2;
+  color: hotpink;
+  text-align: center;
+
+}
+
+h2 {
+  color: whitesmoke
+}
+
+h3 {
+  color: blue
+}
+
+h4 {
+  color: red
+}
+
+p {
+  font-weight: lighter
+}
+
+.ghoul {
+  color: cyan
+}
+
+ul {
+  padding-left: 0;
+  margin-left: 0;
+  list-style-position: inside;
+  color: white;
+}
+
+.smartcat {
+  border: 2px solid rgba(255, 99, 221, 0.6);
+}
+
+.main {
+  text-align: start;
+  color: white;
+  font-weight: bold;
+}
+
+.game-name {
+  text-align: center;
+}
