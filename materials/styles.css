@@ -3,7 +3,7 @@
     src: url("VCROSDMono.ttf");
 }
 
-footer {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,10 +55,9 @@ ul {
 
 .smartcat {
     border: 2px solid rgba(255, 99, 221, 0.6);
-    width: 500px;
-    height: 500px;
+    width: 380px;
+    height: 380px;
 }
-
 .main {
     text-align: start;
     color: white;
