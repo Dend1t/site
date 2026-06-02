@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 DATABASE = 'catlicker.db'
+adminPass = '676767'
 
 
 def init_db():
@@ -72,7 +73,7 @@ def admin_delete():
     username = data.get('username')
     secret = data.get('secret')
 
-    if secret != '676767':
+    if secret != adminPass:
         return jsonify({'status': 'error', 'message': 'Unauthorized'}), 403
 
     with sqlite3.connect(DATABASE) as conn:
@@ -81,6 +82,26 @@ def admin_delete():
         conn.commit()
     return jsonify({'status': 'deleted'})
 
+
+@app.route('/api/admin/update-clicks', methods=['POST'])
+def admin_update_clicks():
+    data = request.json
+    username = data.get('username')
+    clicks = data.get('clicks')
+    secret = data.get('secret')
+
+    if secret != adminPass:
+        return jsonify({'status': 'error', 'message': 'Unauthorized'}), 403
+
+    with sqlite3.connect(DATABASE) as conn:
+        cursor = conn.cursor()
+        cursor.execute('''
+            INSERT INTO players (username, clicks) 
+            VALUES (?, ?)
+            ON CONFLICT(username) DO UPDATE SET clicks = excluded.clicks
+        ''', (username, clicks))
+        conn.commit()
+    return jsonify({'status': 'updated'})
 
 if __name__ == '__main__':
     app.run(debug=True)

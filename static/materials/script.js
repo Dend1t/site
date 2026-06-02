@@ -100,6 +100,22 @@ async function deletePlayer(username) {
         alert("Неверный пароль!");
     }
 }
+async function setClicks(username, newClicks) {
+    const password = prompt("Введите пароль администратора для изменения очков:");
+    if (!password) return;
+
+    const response = await fetch('/api/admin/update-clicks', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ username, clicks: parseInt(newClicks), secret: password })
+    });
+
+    if (response.ok) {
+        loadLeaderboard();
+    } else {
+        alert("Неверный пароль или ошибка запроса!");
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const counterDisplay = document.getElementById('counter');
