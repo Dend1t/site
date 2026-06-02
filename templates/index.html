@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сatlicker</title>
+    <link rel="icon" href="/static/materials/img.png" type="image/png">
+    <link rel="stylesheet" href="/static/materials/styles.css">
+</head>
+<body>
+<header>
+    <a class="main" href="./gameinfo.html">Об игре </a>
+    <a class="game-name" title="Перейти на главную" href="./">Catlicker</a>
+    <a class="main" title="Интересно?" href="./about.html">Обо мне</a>
+</header>
+
+<div>
+    <h2 for="username">Имя игрока: </h2>
+    <input class="nickname" type="text" id="username" value="Silly Cat">
+</div>
+
+<button id="myButton" onclick="catlicker()">
+    <img class="smartcat" id="catImage" src="/static/materials/smartcat.gif" alt="smart cat">
+</button>
+
+<h2>Количество кликов: <span id="counter">0</span></h2>
+
+<button id="save" onclick="saveProgress()">Сохранить в лидерборд</button>
+<button id="reset" onclick="resetProgress()">Очистить текущий прогресс</button>
+
+<hr>
+
+<h2>Топ кликеров</h2>
+<div>
+    <button onclick="loadLeaderboard('clicks')">Сортировка по кликам</button>
+    <button onclick="loadLeaderboard('username')">Сортировка по имени</button>
+</div>
+
+<table class="leaderboard">
+    <thead>
+        <tr>
+            <th class="heading">Игрок</th>
+            <th class="heading">Клики</th>
+        </tr>
+    </thead>
+    <tbody id="leaderboard-body">
+    </tbody>
+</table>
+
+<script src="/static/materials/script.js"></script>
+</body>
+</html>

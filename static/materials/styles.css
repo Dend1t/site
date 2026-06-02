@@ -70,7 +70,52 @@ ul {
     font-weight: bolder;
     font-size: 32px;
 }
+.leaderboard{
+    margin-top: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    color: white;
+    border: 3px solid  #750050;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 button {
     background-color: #2f8e62;
+    color: white;
+    font-family: 'VCROSDMono', sans-serif;
+    font-size: 20px;
+}
+.nickname{
+    text-align: center;
+    font-family: 'VCROSDMono', sans-serif;
+    font-size: 20px;
+}
+.heading{
+    text-align: center;
+    color: black;
+}
+.cell-name {
+    color: lightblue;
+    text-align: left;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+.cell-points {
+    color: white;
+    text-align: center;
+    padding: 8px 15px;
+    font-variant-numeric: tabular-nums;
+}
+
+.leaderboard tr:nth-child(even) {
+    background-color: rgba(117, 0, 80, 0.3);
+}
+
+.leaderboard tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: cadetblue;
 }
